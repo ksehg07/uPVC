@@ -74,8 +74,8 @@ export default function Navbar() {
             className="absolute top-24 left-4 right-4 bg-white border border-green-200 rounded-2xl p-6 flex flex-col gap-4 md:hidden text-gray-900"
           >
             <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link href="#aluminum" onClick={() => setIsOpen(false)}>Aluminum</Link>
-            <Link href="#upvc" onClick={() => setIsOpen(false)}>uPVC</Link>
+            <Link href="/products/aluminum" onClick={() => setIsOpen(false)}>Aluminum</Link>
+            <Link href="/products/upvc" onClick={() => setIsOpen(false)}>uPVC</Link>
             <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
           </motion.div>
         )}
