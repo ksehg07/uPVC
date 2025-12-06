@@ -14,22 +14,22 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4"
     >
-      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-8 py-4 flex items-center justify-between w-full max-w-6xl shadow-2xl">
+      <div className="bg-white/90 backdrop-blur-md border border-green-200 rounded-full px-8 py-4 flex items-center justify-between w-full max-w-6xl shadow-md">
         
-        <Link href="/" className="text-2xl font-bold text-green-500 tracking-tighter">
-          ALU<span className="text-white">PVC</span>
+        <Link href="/" className="text-2xl font-bold text-green-600 tracking-tighter">
+          ALU<span className="text-gray-900">PVC</span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <Link href="/" className="hover:text-green-400 transition">Home</Link>
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-900">
+          <Link href="/" className="hover:text-green-600 transition">Home</Link>
           
           <div 
             className="relative"
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <button className="flex items-center gap-1 hover:text-green-400 transition">
+            <button className="flex items-center gap-1 hover:text-green-600 transition">
               Products <ChevronDown size={14} />
             </button>
             <AnimatePresence>
@@ -38,17 +38,17 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute top-full left-0 mt-4 w-48 bg-black/90 border border-green-500/30 rounded-xl p-4 flex flex-col gap-2 backdrop-blur-xl"
+                  className="absolute top-full left-0 mt-4 w-48 bg-white border border-green-200 rounded-xl p-4 flex flex-col gap-2 backdrop-blur-xl text-gray-900"
                 >
-                  <Link href="/products/aluminum" className="hover:text-green-400">Aluminum Systems</Link>
-                  <Link href="/products/upvc" className="hover:text-green-400">uPVC Systems</Link>
+                  <Link href="/products/aluminum" className="hover:text-green-600">Aluminum Systems</Link>
+                  <Link href="/products/upvc" className="hover:text-green-600">uPVC Systems</Link>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          <Link href="#about" className="hover:text-green-400 transition">About Us</Link>
-          <Link href="/contact" className="hover:text-green-400 transition">Contact</Link>
+          <Link href="#about" className="hover:text-green-600 transition">About Us</Link>
+          <Link href="/contact" className="hover:text-green-600 transition">Contact</Link>
           
           <Link 
             href="/quote" 
@@ -64,14 +64,14 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+        {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="absolute top-24 left-4 right-4 bg-black/95 border border-white/10 rounded-2xl p-6 flex flex-col gap-4 md:hidden"
+            className="absolute top-24 left-4 right-4 bg-white border border-green-200 rounded-2xl p-6 flex flex-col gap-4 md:hidden text-gray-900"
           >
             <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
             <Link href="#aluminum" onClick={() => setIsOpen(false)}>Aluminum</Link>
