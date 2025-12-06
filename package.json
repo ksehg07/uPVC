@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.86.0",
-    "anime": "^0.1.2",
     "animejs": "^4.2.2",
     "framer-motion": "^12.23.25",
     "gsap": "^3.13.0",
