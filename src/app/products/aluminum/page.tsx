@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import ProductGallery from '@/components/ProductGallery';
 
 // Data for Aluminum
-const aluminumCategories = ['Casement', 'Sliding', 'Bi-Fold', 'Lift & Slide', 'Fixed'];
+const aluminumCategories = ['Casement', 'Sliding', 'Bi-Fold', 'Lift & Slide', 'Fixed', 'Slide & Fold'];
 const aluminumImages = [
   { id: 1, category: 'Casement', title: 'French Casement Window', src: '/img1.jpg' },
   { id: 2, category: 'Sliding', title: 'Slimline Slider', src: '/img2.jpg' },
@@ -13,6 +13,7 @@ const aluminumImages = [
   { id: 6, category: 'Casement', title: 'Ventilator Top Hung', src: '/img6.jpg' },
   { id: 7, category: 'Sliding', title: '3-Track Sliding System', src: '/img7.jpg' },
   { id: 8, category: 'Bi-Fold', title: 'Corner Bi-Fold', src: '/img8.jpg' },
+  { id: 9, category: 'Slide & Fold', title: 'Panoramic Slide & Fold', src: '/upvc9.jpg' },
 ];
 
 export default function AluminumPage() {

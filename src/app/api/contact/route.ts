@@ -9,23 +9,62 @@ const supabase = createClient(
 );
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+
+// Initialize Twilio client only if credentials are available
+const getTwilioClient = () => {
+  if (!process.env.TWILIO_ACCOUNT_SID || !process.env.TWILIO_AUTH_TOKEN) {
+    throw new Error('Twilio credentials missing in environment variables');
+  }
+  return twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+};
+
+// Helper function to format phone number to E.164 format
+const formatPhoneNumber = (phone: string): string => {
+  // Remove all non-digit characters
+  const cleaned = phone.replace(/\D/g, '');
+  
+  // If it already has country code, return with +
+  if (cleaned.length >= 10) {
+    return '+' + cleaned.slice(-10).replace(/^0/, '');
+  }
+  
+  throw new Error(`Invalid phone number format: ${phone}`);
+};
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { name, email, phone, message } = body;
 
+    // Validate required fields
+    if (!name || !email || !phone || !message) {
+      return NextResponse.json(
+        { error: 'Missing required fields: name, email, phone, message' },
+        { status: 400 }
+      );
+    }
+
+    // Format phone number to E.164 format
+    let formattedPhone: string;
+    try {
+      formattedPhone = formatPhoneNumber(phone);
+    } catch (phoneError) {
+      return NextResponse.json(
+        { error: `Invalid phone number: ${(phoneError as Error).message}` },
+        { status: 400 }
+      );
+    }
+
     // 1. Store in Supabase
     const { error: dbError } = await supabase
       .from('contacts')
-      .insert([{ name, email, phone, message, created_at: new Date() }]);
+      .insert([{ name, email, phone: formattedPhone, message, created_at: new Date() }]);
 
-    if (dbError) throw dbError;
+    if (dbError) throw new Error(`Database error: ${dbError.message}`);
 
     // 2. Send Confirmation Email to User
     await resend.emails.send({
-      from: 'Quotes <onboarding@resend.dev>', // Use your verified domain
+      from: 'Quotes <info@accuratewindoorsolutions.com>', // Use your verified domain
       to: [email],
       subject: 'We received your inquiry!',
       html: `<h1>Hi ${name},</h1><p>Thanks for reaching out. We will review your requirements for: ${message}</p>`,
@@ -33,34 +72,46 @@ export async function POST(req: Request) {
 
     // 3. Send Notification Email to Owners
     await resend.emails.send({
-      from: 'System <onboarding@resend.dev>',
+      from: 'System <notification@accuratewindoorsolutions.com>',
       to: [process.env.COMPANY_EMAIL!],
       subject: 'NEW LEAD DETECTED',
-      html: `<p>New Lead: ${name}</p><p>Phone: ${phone}</p><p>Msg: ${message}</p>`,
+      html: `<p>New Lead: ${name}</p><p>Phone: ${formattedPhone}</p><p>Msg: ${message}</p>`,
     });
+
+    // Initialize Twilio client
+    const twilioClient = getTwilioClient();
 
     // 4. Send WhatsApp to User (Twilio)
     await twilioClient.messages.create({
       body: `Hi ${name}, thank you for contacting us. Our team will call you shortly regarding your windows/doors inquiry.`,
       from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
-      to: `whatsapp:${phone}`
+      to: `whatsapp:${formattedPhone}`
     });
 
     // 5. Send WhatsApp to Owners
     const owners = [process.env.OWNER_PHONE_1, process.env.OWNER_PHONE_2];
     for (const owner of owners) {
-        if(owner) {
-            await twilioClient.messages.create({
-                body: `🔔 NEW LEAD:\nName: ${name}\nPhone: ${phone}\nMsg: ${message}`,
-                from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
-                to: `whatsapp:${owner}`
-            });
+      if (owner) {
+        try {
+          const formattedOwnerPhone = formatPhoneNumber(owner);
+          await twilioClient.messages.create({
+            body: `🔔 NEW LEAD:\nName: ${name}\nPhone: ${formattedPhone}\nMsg: ${message}`,
+            from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
+            to: `whatsapp:${formattedOwnerPhone}`
+          });
+        } catch (ownerError) {
+          console.warn(`Failed to send WhatsApp to owner ${owner}:`, (ownerError as Error).message);
         }
+      }
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('API Error:', errorMessage);
+    return NextResponse.json(
+      { error: 'Internal Server Error', details: errorMessage },
+      { status: 500 }
+    );
   }
 }

@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Elite Aluminum & uPVC Systems | Modern Windows & Doors',
+  title: 'Accurate Windoor Solutions (AWS) | Premium Aluminum & uPVC',
   description: 'Premium Aluminum and uPVC solutions. Durable, stylish, and energy-efficient designs for your home and office.',
   keywords: 'Aluminum doors, uPVC windows, glass facade, modern architecture',
 };

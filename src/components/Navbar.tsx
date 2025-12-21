@@ -16,8 +16,8 @@ export default function Navbar() {
     >
       <div className="bg-white/90 backdrop-blur-md border border-green-200 rounded-full px-8 py-4 flex items-center justify-between w-full max-w-6xl shadow-md">
         
-        <Link href="/" className="text-2xl font-bold text-green-600 tracking-tighter">
-          ALU<span className="text-gray-900">PVC</span>
+        <Link href="/" className="flex items-center gap-3 text-2xl font-bold text-gray-900 tracking-tighter">
+          <h2>A<span className="text-green-600">WS</span></h2>
         </Link>
 
         {/* Desktop Links */}
@@ -47,7 +47,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <Link href="#about" className="hover:text-green-600 transition">About Us</Link>
+          <Link href="/about" className="hover:text-green-600 transition">About Us</Link>
           <Link href="/contact" className="hover:text-green-600 transition">Contact</Link>
           
           <Link 
@@ -76,6 +76,7 @@ export default function Navbar() {
             <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
             <Link href="/products/aluminum" onClick={() => setIsOpen(false)}>Aluminum</Link>
             <Link href="/products/upvc" onClick={() => setIsOpen(false)}>uPVC</Link>
+            <Link href="/about" onClick={() => setIsOpen(false)}>About Us</Link>
             <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
           </motion.div>
         )}

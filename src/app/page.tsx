@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import HeroCarousel from '@/components/HeroCarousel';
 import WhoWeAre from '@/components/we-are';
+import WhyChooseUs from '@/components/Why-choose-us';
 import Expertise from '@/components/expertise';
 import Comparison from '@/components/Comparison';
 import ContactForm from '@/components/ContactForm';
@@ -15,6 +16,8 @@ export default function Home() {
       <HeroCarousel />
       
       <WhoWeAre />
+
+      <WhyChooseUs />
 
       <Expertise />
 

@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import ProductGallery from '@/components/ProductGallery';
 
 // Data for uPVC
-const upvcCategories = ['Casement', 'Sliding', 'Tilt & Turn', 'Villa', 'Arch'];
+const upvcCategories = ['Casement', 'Sliding', 'Tilt & Turn', 'Bi-Fold'];
 const upvcImages = [
   { id: 1, category: 'Casement', title: 'Classic White Casement', src: '/upvc1.jpg' },
   { id: 2, category: 'Sliding', title: 'Balcony Slider', src: '/upvc2.jpg' },
@@ -13,6 +13,7 @@ const upvcImages = [
   { id: 6, category: 'Casement', title: 'Wood Finish Casement', src: '/upvc6.jpg' },
   { id: 7, category: 'Sliding', title: 'Mesh Integrated Slider', src: '/upvc7.jpg' },
   { id: 8, category: 'Villa', title: 'Secure Grill Villa System', src: '/upvc8.jpg' },
+  { id: 9, category: 'Bi-Fold', title: 'Panoramic Bi-Fold', src: '/upvc9.jpg' },
 ];
 
 export default function UpvcPage() {

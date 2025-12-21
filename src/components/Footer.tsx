@@ -8,7 +8,7 @@ export default function Footer() {
         
         {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">ALU<span className="text-green-600">PVC</span></h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">A<span className="text-green-600">WS</span></h2>
           <p className="text-gray-600 text-sm leading-relaxed">
             Elevating modern architecture with premium aluminum and uPVC fenestration solutions. Built for durability, designed for elegance.
           </p>
