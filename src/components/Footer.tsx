@@ -30,7 +30,7 @@ export default function Footer() {
         <div>
             <h3 className="text-gray-900 font-bold mb-6">Connect</h3>
             <div className="flex gap-4 mb-6">
-                <a href="#" className="p-2 bg-gray-300 rounded-full hover:bg-green-600 hover:text-white transition"><Instagram size={20}/></a>
+                <a href="https://www.instagram.com/accuratewindoorsolutions?igsh=ZjhuNDB2dHhjYnVh" className="p-2 bg-gray-300 rounded-full hover:bg-green-600 hover:text-white transition"><Instagram size={20}/></a>
                 <a href="#" className="p-2 bg-gray-300 rounded-full hover:bg-green-600 hover:text-white transition"><Facebook size={20}/></a>
                 <a href="#" className="p-2 bg-gray-300 rounded-full hover:bg-green-600 hover:text-white transition"><Linkedin size={20}/></a>
             </div>

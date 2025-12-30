@@ -32,7 +32,7 @@ export default function Contact() {
             <div>
               <h3 className="text-xl font-bold mb-2">Corporate Office</h3>
               <p className="text-gray-600 leading-relaxed">
-                [Insert Your Office Address Here] <br />
+                A-12 manak vihar extension Near amit nursing home <br />
                 New Delhi, Delhi <br />
                 India
               </p>

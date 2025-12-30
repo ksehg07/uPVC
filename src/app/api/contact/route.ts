@@ -1,7 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import twilio from 'twilio';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -9,14 +8,6 @@ const supabase = createClient(
 );
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Initialize Twilio client only if credentials are available
-const getTwilioClient = () => {
-  if (!process.env.TWILIO_ACCOUNT_SID || !process.env.TWILIO_AUTH_TOKEN) {
-    throw new Error('Twilio credentials missing in environment variables');
-  }
-  return twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
-};
 
 // Helper function to format phone number to E.164 format
 const formatPhoneNumber = (phone: string): string => {
@@ -77,33 +68,6 @@ export async function POST(req: Request) {
       subject: 'NEW LEAD DETECTED',
       html: `<p>New Lead: ${name}</p><p>Phone: ${formattedPhone}</p><p>Msg: ${message}</p>`,
     });
-
-    // Initialize Twilio client
-    const twilioClient = getTwilioClient();
-
-    // 4. Send WhatsApp to User (Twilio)
-    await twilioClient.messages.create({
-      body: `Hi ${name}, thank you for contacting us. Our team will call you shortly regarding your windows/doors inquiry.`,
-      from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
-      to: `whatsapp:${formattedPhone}`
-    });
-
-    // 5. Send WhatsApp to Owners
-    const owners = [process.env.OWNER_PHONE_1, process.env.OWNER_PHONE_2];
-    for (const owner of owners) {
-      if (owner) {
-        try {
-          const formattedOwnerPhone = formatPhoneNumber(owner);
-          await twilioClient.messages.create({
-            body: `🔔 NEW LEAD:\nName: ${name}\nPhone: ${formattedPhone}\nMsg: ${message}`,
-            from: `whatsapp:${process.env.TWILIO_PHONE_NUMBER}`,
-            to: `whatsapp:${formattedOwnerPhone}`
-          });
-        } catch (ownerError) {
-          console.warn(`Failed to send WhatsApp to owner ${owner}:`, (ownerError as Error).message);
-        }
-      }
-    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
