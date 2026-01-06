@@ -67,7 +67,7 @@ export default function ContactForm() {
             {status === 'loading' ? 'Sending...' : 'Send Inquiry'}
           </motion.button>
           
-          {status === 'success' && <p className="text-green-600 text-center">Message sent successfully! Check your WhatsApp.</p>}
+          {status === 'success' && <p className="text-green-600 text-center">Message sent successfully! Check your Mail & WhatsApp.</p>}
           {status === 'error' && <p className="text-red-600 text-center">Something went wrong. Please call us directly.</p>}
         </form>
       </div>

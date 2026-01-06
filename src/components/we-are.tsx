@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 // src/components/we-are.tsx
 export default function WhoWeAre() {
   return (
@@ -24,7 +26,7 @@ export default function WhoWeAre() {
             {/* Image Placeholder */}
             <div className="h-[400px] w-full bg-gray-100 rounded-3xl border border-green-100 flex items-center justify-center relative overflow-hidden group shadow-lg">
                 <div className="absolute inset-0 bg-green-600/5 group-hover:bg-green-600/10 transition duration-500"></div>
-                <span className="text-gray-400 font-bold text-lg">[Image: AWS Workshop Team]</span>
+                <img src="/aws-workshop-team.jpg" alt="AWS Workshop Team" className="w-full h-full object-cover" />
             </div>
         </div>
 
@@ -33,7 +35,7 @@ export default function WhoWeAre() {
             {/* Image Placeholder */}
             <div className="h-[400px] w-full bg-gray-100 rounded-3xl border border-green-100 flex items-center justify-center relative overflow-hidden group order-2 md:order-1 shadow-lg">
                 <div className="absolute inset-0 bg-green-600/5 group-hover:bg-green-600/10 transition duration-500"></div>
-                <span className="text-gray-400 font-bold text-lg">[Image: Elegant Window Installation]</span>
+                <img src="/elegant-window-installation.jpg" alt="Elegant Window Installation" className="w-full h-full object-cover" />
             </div>
             
             <div className="order-1 md:order-2 space-y-8">

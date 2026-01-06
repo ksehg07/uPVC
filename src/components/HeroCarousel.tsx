@@ -2,14 +2,15 @@
 import { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 const products = [
-  { id: 1, name: 'Casement', type: 'uPVC', color: 'bg-white' },
-  { id: 2, name: 'Sliding', type: 'Aluminum', color: 'bg-green-50' },
-  { id: 3, name: 'Tilt & Turn', type: 'uPVC', color: 'bg-white' },
-  { id: 4, name: 'Bi-Fold', type: 'Aluminum', color: 'bg-green-50' },
-  { id: 5, name: 'Villa', type: 'uPVC', color: 'bg-white' },
-  { id: 6, name: 'Lift & Slide', type: 'Aluminum', color: 'bg-green-50' },
+  { id: 1, name: 'Casement', type: 'uPVC', color: 'bg-white', src: '/Casement-Window.jpeg' },
+  { id: 2, name: 'Sliding', type: 'Aluminum', color: 'bg-green-50', src: '/img2.jpeg' },
+  { id: 3, name: 'Tilt & Turn', type: 'uPVC', color: 'bg-white', src: '/img3.jpeg' },
+  { id: 4, name: 'Bi-Fold', type: 'Aluminum', color: 'bg-green-50', src: '/Bi-Fold-Reference.jpeg' },
+  { id: 5, name: 'Villa', type: 'uPVC', color: 'bg-white', src: '/img4.jpeg' },
+  { id: 6, name: 'Lift & Slide', type: 'Aluminum', color: 'bg-green-50', src: '/img5.jpeg' },
 ];
 
 export default function HeroCarousel() {
@@ -93,10 +94,17 @@ export default function HeroCarousel() {
           {products.map((item) => (
             <div key={item.id} className="flex-shrink-0 w-full md:w-1/3 p-4">
                <div className={`h-[40vh] ${item.color} rounded-2xl border border-green-100 p-6 flex flex-col justify-end relative overflow-hidden group hover:border-green-500/50 transition duration-300 shadow-lg`}>
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-dashed border-green-200 group-hover:border-green-500/30 transition duration-500 rounded"></div>
+                  <Image 
+                    src={item.src}
+                    alt={item.name}
+                    fill
+                    className="absolute inset-0 object-cover group-hover:scale-110 transition duration-500"
+                  />
+                  {/* Gradient Fade Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent group-hover:opacity-0 transition duration-500"></div>
                   <div className="z-10">
                     <span className="text-green-600 text-[10px] font-bold uppercase tracking-widest">{item.type}</span>
-                    <h3 className="text-xl font-bold text-gray-900 mt-1">{item.name}</h3>
+                    <h3 className="text-xl font-bold text-amber-50 mt-1">{item.name}</h3>
                   </div>
                </div>
             </div>
