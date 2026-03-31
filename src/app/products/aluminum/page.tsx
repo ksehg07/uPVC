@@ -3,17 +3,18 @@ import Footer from '@/components/Footer';
 import ProductGallery from '@/components/ProductGallery';
 
 // Data for Aluminum
-const aluminumCategories = ['Casement', 'Sliding', 'Bi-Fold', 'Lift & Slide', 'Fixed', 'Slide & Fold'];
+const aluminumCategories = ['Casement', 'Sliding', 'Slide & Fold'];
 const aluminumImages = [
-  { id: 1, category: 'Casement', title: 'French Casement Window', src: '/img1.jpeg' },
-  { id: 2, category: 'Sliding', title: 'Slimline Slider', src: '/img2.jpeg' },
-  { id: 3, category: 'Bi-Fold', title: 'Panoramic Bi-Fold Door', src: '/img3.jpeg' },
-  { id: 4, category: 'Lift & Slide', title: 'Heavy Duty Balcony Door', src: '/img4.jpeg' },
-  { id: 5, category: 'Fixed', title: 'Floor to Ceiling Facade', src: '/img5.jpeg' },
-  { id: 6, category: 'Casement', title: 'Ventilator Top Hung', src: '/img6.jpeg' },
-  { id: 7, category: 'Sliding', title: '3-Track Sliding System', src: '/img7.jpeg' },
-  { id: 8, category: 'Bi-Fold', title: 'Corner Bi-Fold', src: '/img8.jpeg' },
-  { id: 9, category: 'Slide & Fold', title: 'Panoramic Slide & Fold', src: '/img9.jpeg' },
+  { id: 1, category: 'Casement', title: 'French Door', description: 'Elegant French door with a sleek aluminum frame.', src: '/Images/Casement-French-Door.png' },
+  { id: 2, category: 'Sliding', title: 'Telescoping Sliding', description: 'Smooth telescoping sliding system for large openings.', src: '/Images/Sliding-Telescoping.png' },
+  { id: 3, category: 'Slide & Fold', title: 'Slide & Fold', description: 'Versatile slide and fold window system.', src: '/Images/Slide-n-Fold.png' },
+  { id: 4, category: 'Casement', title: 'Fix Door', description: 'Secure casement door with aluminum construction.', src: '/Images/Fix-Door.png' },
+  { id: 5, category: 'Sliding', title: 'Decorative Arch Window', description: 'Beautiful decorative arch window with aluminum frame.', src: '/Images/Decorative-Arch-Window.png' },
+  { id: 6, category: 'Casement', title: 'French Window', description: 'Classic French window design in aluminum.', src: '/Images/French-Window.png' },
+  { id: 7, category: 'Sliding', title: '2 & 3Track Slider', description: 'Smooth 2-track & 3-track slider system.', src: '/Images/Sliding-2-n-3-Track.png' },
+  { id: 8, category: 'Casement', title: 'Casement Window', description: 'Standard casement window with aluminum frame.', src: '/Images/Casement-Window.jpeg' },
+  { id: 9, category: 'Sliding', title: 'Center Locking Sliding', description: 'Secure center locking sliding system.', src: '/Images/Sliding-Door.png' },
+  { id: 10, category: 'Sliding', title: '3-Track Slider', description: 'Advanced 3-track slider for large openings.', src: '/Images/3-Track-Slider.png' },
 ];
 
 export default function AluminumPage() {

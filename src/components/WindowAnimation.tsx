@@ -67,19 +67,19 @@ export default function WindowAnimation() {
         <rect 
           ref={frameRef}
           x="10" y="10" width="180" height="180" rx="4" 
-          stroke="#4ade80" strokeWidth="4" fill="none" // Green Frame
+          stroke="#0ea5e9" strokeWidth="4" fill="none" // Sky Blue Frame
         />
 
         {/* Left Sash (Fixed) */}
         <g ref={leftSashRef}>
           <rect x="15" y="15" width="82" height="170" rx="2" stroke="white" strokeWidth="2" fill="none" />
-          <rect className="window-glass" x="17" y="17" width="78" height="166" fill="#a7f3d0" opacity="0" />
+          <rect className="window-glass" x="17" y="17" width="78" height="166" fill="#0ea5e9" opacity="0" />
         </g>
 
         {/* Right Sash (Sliding) */}
         <g ref={rightSashRef}>
           <rect x="103" y="15" width="82" height="170" rx="2" stroke="white" strokeWidth="2" fill="none" />
-          <rect className="window-glass" x="105" y="17" width="78" height="166" fill="#a7f3d0" opacity="0" />
+          <rect className="window-glass" x="105" y="17" width="78" height="166" fill="#0ea5e9" opacity="0" />
           {/* Handle */}
           <line x1="110" y1="90" x2="110" y2="110" stroke="white" strokeWidth="3" strokeLinecap="round" />
         </g>

@@ -38,12 +38,12 @@ const features = [
 export default function Expertise() {
   return (
     <section id="expertise" className="py-24 px-4 md:px-20 max-w-7xl mx-auto bg-white">
-      <h2 className="text-4xl font-bold mb-16 text-center text-gray-900">Our <span className="text-green-600">Expertise</span></h2>
+      <h2 className="text-4xl font-bold mb-16 text-center text-gray-900">Our <span className="text-sky-600">Expertise</span></h2>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {features.map((feature, index) => (
-            <div key={index} className="group p-8 rounded-3xl border border-green-100 bg-white hover:shadow-xl hover:border-green-300 transition-all duration-300">
-                <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-6 text-green-600 group-hover:bg-green-600 group-hover:text-white transition-colors">
+            <div key={index} className="group p-8 rounded-3xl border border-sky-100 bg-white hover:shadow-xl hover:border-sky-300 transition-all duration-300">
+                <div className="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center mb-6 text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-colors">
                     <feature.icon size={28} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>

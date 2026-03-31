@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 
 const products = [
-  { id: 1, name: 'Casement', type: 'uPVC', color: 'bg-white', src: '/Casement-Window.jpeg' },
-  { id: 2, name: 'Sliding', type: 'Aluminum', color: 'bg-green-50', src: '/img2.jpeg' },
-  { id: 3, name: 'Tilt & Turn', type: 'uPVC', color: 'bg-white', src: '/img3.jpeg' },
-  { id: 4, name: 'Bi-Fold', type: 'Aluminum', color: 'bg-green-50', src: '/Bi-Fold-Reference.jpeg' },
-  { id: 5, name: 'Villa', type: 'uPVC', color: 'bg-white', src: '/img4.jpeg' },
-  { id: 6, name: 'Lift & Slide', type: 'Aluminum', color: 'bg-green-50', src: '/img5.jpeg' },
+  { id: 1, name: 'Casement', type: 'uPVC', color: 'bg-white', src: '/Images/Casement-Window.jpeg' },
+  { id: 2, name: 'Sliding', type: 'Aluminum', color: 'bg-sky-50', src: '/Images/Sliding-Door.png' },
+  { id: 3, name: 'Tilt & Turn', type: 'uPVC', color: 'bg-white', src: '/Images/Tilt-N-Turn.png' },
+  { id: 4, name: 'Bi-Fold', type: 'Aluminum', color: 'bg-sky-50', src: '/Images/Bi-Fold-Reference.jpeg' },
+  { id: 5, name: 'Villa', type: 'uPVC', color: 'bg-white', src: '/Images/Decorative-Arch-Window.png' },
+  { id: 6, name: 'Lift & Slide', type: 'Aluminum', color: 'bg-sky-50', src: '/Images/Slide-n-Fold.png' },
 ];
 
 export default function HeroCarousel() {
@@ -61,11 +61,11 @@ export default function HeroCarousel() {
 
   return (
     <div className="h-[85vh] w-full flex flex-col justify-center items-center pt-20 overflow-hidden relative" ref={containerRef}>
-      <div className="absolute inset-0 bg-gradient-to-b from-green-100 to-white z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-100 to-white z-0" />
       
       <div className="z-10 text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-bold mb-2 text-gray-900">
-          Precision in <span className="text-green-600">Motion</span>
+          Precision in <span className="text-sky-600">Motion</span>
         </h1>
         <p className="text-gray-600">Engineering Excellence in Aluminum & uPVC</p>
       </div>
@@ -75,7 +75,7 @@ export default function HeroCarousel() {
         className="absolute top-1/2 -translate-y-1/2 left-4 z-20"
         onMouseEnter={() => setIsAutoPlaying(false)}
       >
-        <button onClick={handlePrev} className="p-3 rounded-full bg-white/70 border border-green-200 text-gray-900 hover:bg-green-600 hover:text-white transition">
+        <button onClick={handlePrev} className="p-3 rounded-full bg-white/70 border border-sky-200 text-gray-900 hover:bg-sky-600 hover:text-white transition">
           <ChevronLeft size={32} />
         </button>
       </div>
@@ -83,7 +83,7 @@ export default function HeroCarousel() {
         className="absolute top-1/2 -translate-y-1/2 right-4 z-20"
         onMouseEnter={() => setIsAutoPlaying(false)}
       >
-        <button onClick={() => handleNext(true)} className="p-3 rounded-full bg-white/70 border border-green-200 text-gray-900 hover:bg-green-600 hover:text-white transition">
+        <button onClick={() => handleNext(true)} className="p-3 rounded-full bg-white/70 border border-sky-200 text-gray-900 hover:bg-sky-600 hover:text-white transition">
           <ChevronRight size={32} />
         </button>
       </div>
@@ -93,7 +93,7 @@ export default function HeroCarousel() {
         <div className="carousel-track flex w-full">
           {products.map((item) => (
             <div key={item.id} className="flex-shrink-0 w-full md:w-1/3 p-4">
-               <div className={`h-[40vh] ${item.color} rounded-2xl border border-green-100 p-6 flex flex-col justify-end relative overflow-hidden group hover:border-green-500/50 transition duration-300 shadow-lg`}>
+               <div className={`h-[40vh] ${item.color} rounded-2xl border border-sky-100 p-6 flex flex-col justify-end relative overflow-hidden group hover:border-sky-500/50 transition duration-300 shadow-lg`}>
                   <Image 
                     src={item.src}
                     alt={item.name}
@@ -103,7 +103,7 @@ export default function HeroCarousel() {
                   {/* Gradient Fade Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent group-hover:opacity-0 transition duration-500"></div>
                   <div className="z-10">
-                    <span className="text-green-600 text-[10px] font-bold uppercase tracking-widest">{item.type}</span>
+                    <span className="text-sky-600 text-[10px] font-bold uppercase tracking-widest">{item.type}</span>
                     <h3 className="text-xl font-bold text-amber-50 mt-1">{item.name}</h3>
                   </div>
                </div>

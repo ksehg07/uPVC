@@ -9,10 +9,10 @@ export default function Contact() {
       <Navbar />
 
       {/* Header */}
-      <section className="pt-32 pb-12 px-6 bg-green-50">
+      <section className="pt-32 pb-12 px-6 bg-sky-50">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <h1 className="text-5xl font-bold tracking-tight">
-            Get in <span className="text-green-600">Touch</span>
+            Get in <span className="text-sky-600">Touch</span>
           </h1>
           <p className="text-gray-600 text-lg">
             Have a project in mind? Visit our experience centers or drop us a
@@ -26,7 +26,7 @@ export default function Contact() {
         <div className="space-y-12">
           {/* Address 1: Corporate Office */}
           <div className="flex gap-4 items-start p-6 rounded-2xl border border-gray-100 shadow-lg bg-white">
-            <div className="p-3 bg-green-100 text-green-700 rounded-full shrink-0">
+            <div className="p-3 bg-sky-100 text-sky-700 rounded-full shrink-0">
               <MapPin size={24} />
             </div>
             <div>
@@ -41,7 +41,7 @@ export default function Contact() {
 
           {/* Address 2: Operations Unit */}
           <div className="flex gap-4 items-start p-6 rounded-2xl border border-gray-100 shadow-lg bg-white">
-            <div className="p-3 bg-green-100 text-green-700 rounded-full shrink-0">
+            <div className="p-3 bg-sky-100 text-sky-700 rounded-full shrink-0">
               <MapPin size={24} />
             </div>
             <div>
@@ -57,7 +57,7 @@ export default function Contact() {
           {/* Contact Details - CHANGED to grid-cols-1 for full width */}
           <div className="grid grid-cols-1 gap-6">
             <div className="p-6 rounded-2xl bg-gray-50 border border-gray-100">
-              <Phone className="text-green-600 mb-4" size={24} />
+              <Phone className="text-sky-600 mb-4" size={24} />
               <h3 className="font-bold mb-2">Phone</h3>
               <p className="text-gray-600">
                 +91 858 599 1836 <span className="mx-2 text-gray-400">/</span>{" "}
@@ -65,7 +65,7 @@ export default function Contact() {
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-gray-50 border border-gray-100">
-              <Mail className="text-green-600 mb-4" size={24} />
+              <Mail className="text-sky-600 mb-4" size={24} />
               <h3 className="font-bold mb-2">Email</h3>
               <p className="text-gray-600 font-medium break-all">
                 accuratewindoorsolutions@gmail.com

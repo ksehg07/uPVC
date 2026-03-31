@@ -38,7 +38,7 @@ export default function About() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-32 px-6 md:px-20 bg-green-900 text-white overflow-hidden">
+      <section className="relative py-32 px-6 md:px-20 bg-sky-900 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('/window.svg')] opacity-5 bg-repeat rotate-12 scale-150"></div>
 
@@ -52,9 +52,9 @@ export default function About() {
           >
             <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6">
               DEFINE <br />
-              <span className="text-green-400">YOUR VIEW.</span>
+              <span className="text-sky-400">YOUR VIEW.</span>
             </h1>
-            <p className="text-xl text-green-100 max-w-lg leading-relaxed">
+            <p className="text-xl text-sky-100 max-w-lg leading-relaxed">
               Accurate Windoor Solutions (AWS) specializes in premium Aluminium
               and uPVC fenestration systems. We blend architectural precision
               with durability.
@@ -83,9 +83,9 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            className="p-10 rounded-3xl bg-gray-50 hover:bg-green-50 transition duration-500 border border-gray-100 shadow-sm"
+            className="p-10 rounded-3xl bg-gray-50 hover:bg-sky-50 transition duration-500 border border-gray-100 shadow-sm"
           >
-            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+            <div className="w-16 h-16 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center mb-6">
               <Target size={32} />
             </div>
             <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
@@ -102,9 +102,9 @@ export default function About() {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ delay: 0.2 }}
-            className="p-10 rounded-3xl bg-gray-50 hover:bg-green-50 transition duration-500 border border-gray-100 shadow-sm"
+            className="p-10 rounded-3xl bg-gray-50 hover:bg-sky-50 transition duration-500 border border-gray-100 shadow-sm"
           >
-            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+            <div className="w-16 h-16 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center mb-6">
               <Lightbulb size={32} />
             </div>
             <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
@@ -144,7 +144,7 @@ export default function About() {
       {/* Why Choose Us Highlight */}
       <section className="py-24 px-6 md:px-20 max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-16">
-          A<span className="text-green-600">WS</span> Advantage
+          A<span className="text-sky-600">WS</span> Advantage
         </h2>
         <motion.div
           initial="hidden"
@@ -157,7 +157,7 @@ export default function About() {
             variants={fadeInUp}
             className="space-y-4 p-4 rounded-2xl hover:bg-gray-50 transition"
           >
-            <div className="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+            <div className="mx-auto w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center text-sky-600">
               <Trophy size={32} />
             </div>
             <h4 className="font-bold text-xl">Premium Quality</h4>
@@ -167,7 +167,7 @@ export default function About() {
             variants={fadeInUp}
             className="space-y-4 p-4 rounded-2xl hover:bg-gray-50 transition"
           >
-            <div className="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+            <div className="mx-auto w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center text-sky-600">
               <Users size={32} />
             </div>
             <h4 className="font-bold text-xl">Expert Support</h4>
@@ -177,7 +177,7 @@ export default function About() {
             variants={fadeInUp}
             className="space-y-4 p-4 rounded-2xl hover:bg-gray-50 transition"
           >
-            <div className="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+            <div className="mx-auto w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center text-sky-600">
               <Clock size={32} />
             </div>
             <h4 className="font-bold text-xl">Fast Delivery</h4>
@@ -187,7 +187,7 @@ export default function About() {
             variants={fadeInUp}
             className="space-y-4 p-4 rounded-2xl hover:bg-gray-50 transition"
           >
-            <div className="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+            <div className="mx-auto w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center text-sky-600">
               <Target size={32} />
             </div>
             <h4 className="font-bold text-xl">Cost Effective</h4>
